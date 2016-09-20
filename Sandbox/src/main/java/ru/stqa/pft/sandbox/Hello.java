@@ -4,14 +4,15 @@ public class Hello {
     public static void main(String[] args) {
         hello("world!!!!");
         hello("user!!!!");
-        hello("Tttt!!!!");
+        hello("Tanya!!!!");
 
-        double l=5;
-        System.out.println("Площадь квадрата со стороной " +l+ " = " + area(l));
+        Square s= new Square(5);
+        System.out.println("Площадь квадрата со стороной " +s.l+ " = " + area(s));
 
-        double a=4;
-        double b=6;
-        System.out.println("Площадь прямоугольника со сторонами " +a+ " и " +b+ " = " +area(a,b) );
+        Rectagle r = new Rectagle(4,6);
+
+
+        System.out.println("Площадь прямоугольника со сторонами " +r.a+ " и " +r.b+ " = " +area(r) );
 
     }
 
@@ -20,15 +21,15 @@ public class Hello {
         System.out.println("Hello "+ somebody);
     }
 
-    public static double area(double len)
+    public static double area(Square s)
     {
-       return len*len;
+       return s.l * s.l;
 
     }
 
-    public static double area(double a, double b)
+    public static double area(Rectagle r)
     {
-        return a*b;
+        return r.a*r.b;
     }
 
 
