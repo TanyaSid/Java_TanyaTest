@@ -18,5 +18,4 @@ public class Distance
               + PointClass.distance(p1,p2) );
     }
 
-
 }
