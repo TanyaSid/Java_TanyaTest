@@ -15,7 +15,7 @@ public class Distance
 
       System.out.println("Расстояние между точками с координатами " + p1.x +" и " +p1.y +
               " для первой точки и координатами "  + p2.x + " и " +p2.y +" для второй точки = "
-              + PointClass.distance(p1,p2) );
+              + p1.distance(p1,p2) );
     }
 
 }

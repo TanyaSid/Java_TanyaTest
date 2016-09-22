@@ -19,7 +19,7 @@ this.y=y;
 
   }
 
-  public static double distance(PointClass p1, PointClass p2)
+  public double distance(PointClass p1, PointClass p2)
   {
     double AB = Math.sqrt((p2.x -p1.x) * (p2.x -p1.x) + (p2.y - p1.y) * (p2.y - p1.y));
     return AB;
