@@ -15,7 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 import static org.openqa.selenium.OutputType.*;
 
-public class grupcrtests {
+public class GroupCreationTest {
 
 
     protected static WebDriver wd;
@@ -25,10 +25,6 @@ public class grupcrtests {
 
         wd = new FirefoxDriver();
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    }
-    
-    @Test
-    public void grupcrtests() {
         wd.get("http://localhost/addressbook/");
         wd.findElement(By.name("pass")).click();
         wd.findElement(By.name("pass")).sendKeys("\\undefined");
@@ -40,6 +36,11 @@ public class grupcrtests {
         wd.findElement(By.name("pass")).clear();
         wd.findElement(By.name("pass")).sendKeys("secret");
         wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+    }
+    
+    @Test
+    public void testGroupCreation() {
+
         wd.findElement(By.id("container")).click();
         wd.findElement(By.linkText("groups")).click();
         wd.findElement(By.name("new")).click();
