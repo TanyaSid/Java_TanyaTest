@@ -48,5 +48,22 @@ public class ContactHelper extends HelperBase{
   public void returntoHomepage() {
     click(By.linkText("home"));
   }
+public void confirmDeletion()
+{
+  wd.switchTo().alert().accept();
+
+  }
+
+  public void selectContact() {
+
+    if (!wd.findElement(By.id("3")).isSelected()) {
+      click(By.id("3"));
+    }
+  }
+
+  public void deleteContact() {
+    wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
+  }
+
 
 }
