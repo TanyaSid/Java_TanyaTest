@@ -51,9 +51,11 @@ public void confirmDeletion()
 
   public void selectContact() {
 
-    if (!wd.findElement(By.id("3")).isSelected()) {
-      click(By.id("3"));
+    click(By.linkText("home"));
+    if (!wd.findElement(By.name("selected[]")).isSelected()) {
+      click(By.name("selected[]"));
     }
+
   }
 
   public void deleteContact() {
@@ -78,5 +80,18 @@ public void confirmDeletion()
 
   }
 
+  public void contactCreation(ContactData contact,boolean contactPresence)
+  {
+    initContactCreation();
+    populateContactPrData(contact,contactPresence);
+    submitContactCreation();
+  }
+
+
+  public boolean isThereContact() {
+
+    return isElementPresent(By.name("selected[]"));
+
+  }
 
 }
