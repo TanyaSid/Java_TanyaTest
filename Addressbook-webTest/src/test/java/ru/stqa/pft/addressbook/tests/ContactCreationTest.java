@@ -11,7 +11,8 @@ public class ContactCreationTest extends TestBase {
     {
 
         app.getContactHelper().initContactCreation();
-        app.getContactHelper().populateContactPrData(new ContactData("First Name", "Last Name", "user by Tanya", "title by Tanya", "SS ", "SS,SS,SS", "first-name.last-name@ss.by", "1975", "//div[@id='content']/form/select[1]//option[17]", "//div[@id='content']/form/select[2]//option[7]"));
+        app.getContactHelper().populateContactPrData(new ContactData("First Name", "Last Name", "user by Tanya", "tanya test1", "title by Tanya", "SS ", "SS,SS,SS", "first-name.last-name@ss.by"),true);
+        app.getContactHelper().submitContactCreation();
         app.getContactHelper().returntoHomepage();
     }
 

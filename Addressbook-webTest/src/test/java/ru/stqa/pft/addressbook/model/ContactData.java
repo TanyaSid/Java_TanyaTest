@@ -4,25 +4,22 @@ public class ContactData {
   private final String fisrtName;
   private final String lastName;
   private final String nickname;
+  private String group;
   private final String title;
   private final String company;
   private final String address;
   private final String email;
-  private final String birthYear;
-  private final String xpathBirthDay;
-  private final String xpathBirthMonth;
 
-  public ContactData(String fisrtName, String lastName, String nickname, String title, String company, String address, String email, String birthYear, String xpathBirthDay, String xpathBirthMonth) {
+
+  public ContactData(String fisrtName, String lastName, String nickname, String group, String title, String company, String address, String email) {
     this.fisrtName = fisrtName;
     this.lastName = lastName;
     this.nickname = nickname;
-    this.title = title;
+        this.title = title;
     this.company = company;
     this.address = address;
     this.email = email;
-    this.birthYear = birthYear;
-    this.xpathBirthDay = xpathBirthDay;
-    this.xpathBirthMonth = xpathBirthMonth;
+    this.group = group;
   }
 
   public String getFisrtName() {
@@ -53,15 +50,9 @@ public class ContactData {
     return email;
   }
 
-  public String getBirthYear() {
-    return birthYear;
+  public String getGroup() {
+    return group;
   }
 
-  public String getXpathBirthDay() {
-    return xpathBirthDay;
-  }
 
-  public String getXpathBirthMonth() {
-    return xpathBirthMonth;
-  }
 }
