@@ -43,9 +43,6 @@ public class ContactHelper extends HelperBase{
     click(By.linkText("add new"));
   }
 
-  public void returntoHomepage() {
-    click(By.linkText("home"));
-  }
 public void confirmDeletion()
 {
   wd.switchTo().alert().accept();
