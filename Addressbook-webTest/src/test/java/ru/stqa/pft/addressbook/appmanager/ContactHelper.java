@@ -56,9 +56,13 @@ public void confirmDeletion()
 
   public void selectContact() {
 
+    //wd.findElements(By.name("selected[]")).get(index).click();
+
+    wd.findElements(By.name("selected[]"));
     click(By.linkText("home"));
     if (!wd.findElement(By.name("selected[]")).isSelected()) {
       click(By.name("selected[]"));
+
     }
 
   }
