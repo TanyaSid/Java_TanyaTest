@@ -22,7 +22,7 @@ public class ContactModificationTest extends TestBase {
       app.getContactHelper().contactCreation(new ContactData("First Name", "Last Name", "user by Tanya", "tanya test1", "title by Tanya", "SS ", "SS,SS,SS", "first-name.last-name@ss.by"),true);
    }
     List<ContactData> contbefore = app.getContactHelper().getContactList();
-    app.getContactHelper().selectContact(contbefore.size());
+    //app.getContactHelper().selectContact(contbefore.size());
     app.getContactHelper().initContactModification();
     ContactData contact =new ContactData(contbefore.get(contbefore.size()-1).getId(),"First Name", "Last Name", "user by Tanya", "tanya test1", "title by Tanya", "SS ", "SS,SS,SS", "first-name.last-name@ss.by");
     app.getContactHelper().submitContactModification();
