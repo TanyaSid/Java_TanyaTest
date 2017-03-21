@@ -54,14 +54,14 @@ public void confirmDeletion()
 
   }
 
-  public void selectContact() {
+  public void selectContact(int index) {
 
-    //wd.findElements(By.name("selected[]")).get(index).click();
+    WebElement checkbox = wd.findElements(By.name("selected[]")).get(index);
 
-    wd.findElements(By.name("selected[]"));
-    click(By.linkText("home"));
-    if (!wd.findElement(By.name("selected[]")).isSelected()) {
-      click(By.name("selected[]"));
+    // wd.findElements(By.name("selected[]"));
+//    click(By.linkText("home"));
+    if (!checkbox.isSelected()) {
+     checkbox.click();
 
     }
 
