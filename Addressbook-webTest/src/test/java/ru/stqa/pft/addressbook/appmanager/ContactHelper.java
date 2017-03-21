@@ -3,10 +3,15 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by trodzina on 9/30/2016.
@@ -58,6 +63,22 @@ public void confirmDeletion()
 
   }
 
+  public List<ContactData> getContactList() {
+    List<ContactData>  contacts =new ArrayList<>();
+    List<WebElement> elements = wd.findElements(By.xpath(".//*[@id='maintable']/tbody/tr[@name='entry']"));
+    for(WebElement element:elements)
+    {
+
+      String lastName = element.findElement(By.xpath("./td[2]")).getText();
+      String firstName = element.findElement(By.xpath("./td[3]")).getText();
+      int id= Integer.parseInt(element.findElement(By.xpath("./td[1]")).findElement(By.tagName("input")).getAttribute("value"));
+      ContactData contact = new ContactData(id,firstName, lastName, null, null, null, null,null, null);
+      contacts.add(contact);
+    }
+    return contacts;
+  }
+
+
   public void deleteContact() {
     wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
   }
@@ -77,6 +98,12 @@ public void confirmDeletion()
   public void initContactModification() {
 
     wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img")).click();
+
+  }
+
+  public int getGontactCount() {
+
+    return wd.findElements(By.name("selected[]")).size();
 
   }
 
